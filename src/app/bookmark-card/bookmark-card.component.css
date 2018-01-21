@@ -1,0 +1,6 @@
+.bookmark-card {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    width: 144px;
+}

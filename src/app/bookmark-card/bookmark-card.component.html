@@ -1,0 +1,19 @@
+<mat-card class="bookmark-card">
+    <mat-card-title>
+        <a role="link" target="_new" href={{bookmark.url}}>{{bookmark.name}}</a>
+    </mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem">{{bookmark.description}}</mat-list-item>
+      <mat-list-item role="listitem"><mat-slide-toggle checked={{bookmark.isHidden}} disabled="true">Is hidden</mat-slide-toggle></mat-list-item>
+      <mat-list-item role="listitem">
+        <mat-chip-list>
+          <mat-chip *ngFor="let tag of bookmark.tags">{{tag}}</mat-chip>
+        </mat-chip-list>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+
+  </mat-card-actions>
+</mat-card>

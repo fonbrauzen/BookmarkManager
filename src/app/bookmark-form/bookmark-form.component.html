@@ -1,0 +1,29 @@
+<form class="bookmark-form" [formGroup]="bookmarkForm">
+  <mat-dialog-content>
+    <mat-form-field>
+      <input formControlName="name" matInput placeholder="Tile">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="url" matInput type="url" placeholder="URL">
+      <!-- <mat-error *ngIf="url.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <textarea formControlName="description" matInput placeholder="Description"></textarea>
+    </mat-form-field>
+    <mat-slide-toggle formControlName="isHidden">Is hidden</mat-slide-toggle>
+    <mat-form-field class="tags-chip-list">
+      <mat-chip-list #chipList>
+        <mat-chip *ngFor="let tag of tags" [selectable]="selectable" [removable]="removable" (remove)="remove(tag)">
+          {{tag}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="New tag..." [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)" />
+      </mat-chip-list>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button type="submit" [disabled]="bookmarkForm.invalid" (click)="onSubmit()">Submit</button>
+  </mat-dialog-actions>
+</form>

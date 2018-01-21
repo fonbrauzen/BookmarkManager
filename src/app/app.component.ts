@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BookmarksFiltersComponent } from './bookmarks-filters/bookmarks-filters.component';
 
 @Component({
   selector: 'app-root',
