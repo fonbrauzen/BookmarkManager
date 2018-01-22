@@ -14,7 +14,6 @@ import {
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { BookmarkComponent } from './bookmark/bookmark.component';
 import { BookmarkEditComponent } from './bookmark-edit/bookmark-edit.component';
 import { BookmarksFiltersComponent } from './bookmarks-filters/bookmarks-filters.component';
 import { BookmarksContainerComponent } from './bookmarks-container/bookmarks-container.component';
@@ -27,7 +26,6 @@ import { BookmarkCardComponent } from './bookmark-card/bookmark-card.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BookmarkComponent,
     BookmarkEditComponent,
     BookmarksFiltersComponent,
     BookmarksContainerComponent,
