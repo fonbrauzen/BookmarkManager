@@ -7,6 +7,7 @@ import { LocalHelper } from './local-helper';
 import { BookmarkTag } from './bookmark-tag';
 import { Constants } from './constants';
 import { Bookmark } from './bookmark';
+import { BookmarksSyncService } from './bookmarks-sync.service';
 
 @Injectable()
 export class BookmarksLocalService {
@@ -55,7 +56,7 @@ export class BookmarksLocalService {
     return Observable.of(bookmarks);
   }
 
-  public static AddBookmark = (bookmark: Bookmark): Observable<number> => {
+  public static AddBookmark = (bookmark: Bookmark): void => {
     let latestBookmarks: Bookmark[];
     let bookmarkId: number;
     let newBookmark: Bookmark;
@@ -68,7 +69,7 @@ export class BookmarksLocalService {
       latestBookmarks.push(newBookmark);
     });
     BookmarksLocalService.BookmarksUpdate(latestBookmarks);
-    return Observable.create(newBookmark);
+    BookmarksSyncService.AddBokkmark.next(newBookmark);
   }
 
 }
