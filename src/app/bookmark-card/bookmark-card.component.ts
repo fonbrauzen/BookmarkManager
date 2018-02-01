@@ -4,7 +4,7 @@ import { Bookmark } from '../bookmark';
 @Component({
   selector: 'app-bookmark-card',
   templateUrl: './bookmark-card.component.html',
-  styleUrls: ['./bookmark-card.component.css']
+  styleUrls: ['./bookmark-card.component.css'],
 })
 export class BookmarkCardComponent implements OnInit {
 

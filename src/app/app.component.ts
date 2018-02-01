@@ -7,5 +7,5 @@ import { BookmarksFiltersComponent } from './bookmarks-filters/bookmarks-filters
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Bookmark manager';
 }
